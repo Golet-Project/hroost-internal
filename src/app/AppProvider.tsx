@@ -7,9 +7,7 @@ import { useState } from "react"
 import { usePathname } from "next/navigation"
 
 import { BiHomeAlt, BiLockAlt } from "react-icons/bi"
-import { FiUserPlus } from "react-icons/fi"
 import { BiSearch } from "react-icons/bi"
-import { FaUserTie } from "react-icons/fa6"
 import { RxDoubleArrowLeft } from "react-icons/rx"
 import { Input } from "@/components/ui/input"
 import { AuthContext } from "@/context/authContext"
@@ -40,16 +38,6 @@ function Sidebar({ isCollapse }: SidebarProps) {
     },
     {
       icon: (
-        <FaUserTie
-          className={cn("text-lg lg:text-xl", isCollapse ? menuIconClassName.collapse : menuIconClassName.expand)}
-        />
-      ),
-      pathName: "/employee",
-      activePattern: /^\/employee\/?.*/i,
-      title: "Karyawan"
-    },
-    {
-      icon: (
         <BiLockAlt
           className={cn("text-lg lg:text-xl", isCollapse ? menuIconClassName.collapse : menuIconClassName.expand)}
         />
@@ -57,16 +45,6 @@ function Sidebar({ isCollapse }: SidebarProps) {
       pathName: "/role",
       activePattern: /^\/role\/?.*/i,
       title: "Role"
-    },
-    {
-      icon: (
-        <FiUserPlus
-          className={cn("text-lg lg:text-xl", isCollapse ? menuIconClassName.collapse : menuIconClassName.expand)}
-        />
-      ),
-      pathName: "/user",
-      activePattern: /^\/user\/?.*/i,
-      title: "User"
     }
   ]
 
